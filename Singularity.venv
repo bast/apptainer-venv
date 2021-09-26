@@ -8,16 +8,18 @@ From: ubuntu:21.04
 #   venv
 #
 # Usage:
-#   $ ./venv.sif myscript.py
+#   $ ./venv.sif python myscript.py
 #   runs myscript.py inside the virtual environment defined by requirements.txt
 #
-#   $ ./venv.sif
+#   $ ./venv.sif python
 #   opens python shell inside the virtual environment defined by requirements.txt
 
 %post
   export DEBIAN_FRONTEND=noninteractive
   apt-get update -y
   apt install -y python3 python3.9-venv
+
+  ln -sf /usr/bin/python3 /usr/bin/python
 
   # otherwise sh points to dash
   ln -sf /bin/bash /usr/bin/sh
@@ -40,8 +42,4 @@ From: ubuntu:21.04
     fi
   fi
 
-  if [ "$#" -eq 0 ]; then
-    python3
-  else
-    python3 $@
-  fi
+  $@

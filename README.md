@@ -12,12 +12,12 @@ $ singularity pull https://github.com/bast/singularity-venv/releases/download/0.
 
 Run `myscript.py` inside the virtual environment defined by `requirements.txt`:
 ```
-$ ./venv.sif myscript.py
+$ ./venv.sif python myscript.py
 ```
 
 Open python shell inside the virtual environment defined by `requirements.txt`:
 ```
-$ ./venv.sif
+$ ./venv.sif python
 ```
 
 ---
