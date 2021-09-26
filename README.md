@@ -2,7 +2,7 @@
 
 How to fetch the image:
 ```
-$ singularity pull https://github.com/bast/singularity-venv/releases/download/0.1.0/venv.sif
+$ singularity pull https://github.com/bast/singularity-venv/releases/download/0.2.0/venv.sif
 ```
 
 ## Usage
