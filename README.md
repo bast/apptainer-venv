@@ -1,8 +1,10 @@
-# Python virtual environment on Singularity
+# Python virtual environment on [Apptainer](https://apptainer.org/)
+
+I use it to install dependencies that may be tough to install on my NixOS environment.
 
 How to fetch the image:
 ```
-$ singularity pull https://github.com/bast/singularity-venv/releases/download/0.3.0/venv.sif
+$ apptainer pull https://github.com/bast/apptainer-venv/releases/download/0.4.0/venv.sif
 ```
 
 ## Usage
@@ -22,5 +24,6 @@ $ ./venv.sif python
 
 ---
 
-I have used this wonderful guide as starting point and inspiration:
-https://github.com/singularityhub/singularity-deploy
+To build the image, I have used [this wonderful
+guide](https://github.com/singularityhub/singularity-deploy) as starting point
+and inspiration.
