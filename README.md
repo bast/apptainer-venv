@@ -1,4 +1,4 @@
-# Python virtual environment on [Apptainer](https://apptainer.org/)
+# Fast Python virtual environments on [Apptainer](https://apptainer.org/)
 
 I use it to install dependencies that may be tough to install on my NixOS environment.
 
