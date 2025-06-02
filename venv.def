@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: python:3.12-slim
+From: python:3.13-slim
 
 
 %post
