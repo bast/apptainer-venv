@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: python:3.13-slim
+From: python:3.14-slim
 
 
 %post
@@ -11,7 +11,7 @@ From: python:3.13-slim
     # this is here so that source command works
     ln -sf /bin/bash /bin/sh
 
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    curl -LsSf https://astral.sh/uv/install.sh | UV_INSTALL_DIR=/opt/uv sh
 
     # clean up
     apt-get clean
@@ -24,17 +24,17 @@ From: python:3.13-slim
 
 
 %runscript
-    export PATH=$PATH:/root/.local/bin
+    export UV_LINK_MODE=copy    
 
     if [ ! -d "venv" ]; then
-        uv venv venv
+        /opt/uv/uv venv venv
         source venv/bin/activate
-        uv pip install -r requirements.txt
+        /opt/uv/uv pip install -r requirements.txt
     else
         source venv/bin/activate
         if [ "requirements.txt" -nt "venv" ]; then
             echo "requirements.txt is newer than venv: updating venv"
-            uv pip install -r requirements.txt
+            /opt/uv/uv pip install -r requirements.txt
             touch venv
         fi
     fi

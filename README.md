@@ -4,7 +4,7 @@ I use it to install dependencies that may be tough to install on my NixOS enviro
 
 How to fetch the image:
 ```
-$ apptainer pull https://github.com/bast/apptainer-venv/releases/download/0.7.0/venv.sif
+$ apptainer pull https://github.com/bast/apptainer-venv/releases/download/0.8.0/venv.sif
 ```
 
 
