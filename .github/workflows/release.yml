@@ -2,8 +2,7 @@ name: apptainer-release
 
 on:
   pull_request:
-    branches:
-      - main
+    types: [closed]
 
 jobs:
   release:
